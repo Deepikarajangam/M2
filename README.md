@@ -120,37 +120,48 @@ Write a C program to perform addition and subtraction of two numbers using funct
 4.	Call the addition and subtraction functions, passing the two numbers as arguments.
 
 ## PROGRAM:
-```#include <stdio.h>
-int sum();
-int sub();
-int main()
-{
-    int t,f;
-    t=sum();
-    f=sub();
-    printf("Addition: %d\n",t);
-    printf("Subtraction: %d",f);
+```
+#include <stdio.h>
+
+
+void add(int a, int b);
+void subtract(int a, int b);
+
+int main() {
+    int num1, num2;
+
+   
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+   
+    add(num1, num2);
+    subtract(num1, num2);
+
+    return 0;
 }
-int sum()
-{
-    int a,b,c;
-    scanf("%d%d",&a,&b);
-    c=a+b;
-    return c;
+
+
+void add(int a, int b) {
+    int sum = a + b;
+    printf("Addition: %d + %d = %d\n", a, b, sum);
 }
-int sub()
-{
-    int g,h,i;
-    scanf("%d%d",&g,&h);
-    i=g-h;
-    return i;
+
+void subtract(int a, int b) {
+    int diff = a - b;
+    printf("Subtraction: %d - %d = %d\n", a, b, diff);
 }
+
 ```
 
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/b56a628b-19b9-41d3-adb9-f0981cdc55d9)
 
-![image](https://github.com/user-attachments/assets/1ec2b46f-2ff4-4660-b80d-2e2e8b142c53)
+
 
 
 
