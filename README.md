@@ -180,36 +180,38 @@ Write a c program to find the sum of odd digits using for loop
 
 ## PROGRAM:
 ```
-#include <stdio.h>
-
 int main() {
-    int num, sum = 0;
-    
+    int num, temp, digit, sum = 0;
+
     
     printf("Enter a number: ");
     scanf("%d", &num);
-    
-    
-    for (; num != 0; num /= 10) {
-        int digit = num % 10;  
-        
+
+    temp = num; 
+
+  
+    for (; temp > 0; temp /= 10) {
+        digit = temp % 10;
+
         
         if (digit % 2 != 0) {
-            sum += digit;  
+            sum += digit;
         }
     }
+
     
-    
-    printf("Sum of odd digits: %d\n", sum);
-    
+    printf("Sum of odd digits in %d is: %d\n", num, sum);
+
     return 0;
 }
+ 
 ```
 
 
 ## OUTPUT:
 
-![image](https://github.com/user-attachments/assets/b71c5b2c-3313-431c-af48-2adc2e6b2cd6)
+![image](https://github.com/user-attachments/assets/6e321915-2861-435f-a9b7-0b76eb359302)
+
 
 
 
@@ -236,43 +238,44 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
-```#include <stdio.h>
+```
+#include <stdio.h>
 
-
-long long int factorial(int n) {
-    long long int fact = 1;
-    
-   
-    for (int i = 1; i <= n; i++) {
-        fact *= i;
-    }
-    
-    return fact;
-}
+void fact();
 
 int main() {
-    int num;
     
-   
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    
-   
-    if (num < 0) {
-        printf("Factorial is not defined for negative numbers.\n");
-    } else {
-        
-        long long int result = factorial(num);
-        printf("Factorial of %d is %lld\n", num, result);
-    }
-    
+    fact();
     return 0;
+}
+
+
+void fact() {
+    int i, N;
+    long long factorial = 1; 
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &N);
+
+   
+    if (N < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+        return;
+    }
+
+    
+    for (i = 1; i <= N; i++) {
+        factorial *= i;
+    }
+
+  
+    printf("Factorial of %d is: %lld\n", N, factorial);
 }
 ```
 
 
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/a755671d-0bbb-4233-883c-83976f326385)
+![image](https://github.com/user-attachments/assets/0ae62ebc-221b-452f-b6f2-32b9279df51c)
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
